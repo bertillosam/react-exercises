@@ -1,38 +1,44 @@
-import { Moon, Sun } from 'lucide-react';
-import { useEffect, useState} from 'react'
+import { Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    useEffect(() => {
-        const storedTheme = localStorage.getItem("theme");
-        if(storedTheme === "dark"){
-            setIsDarkMode(true);
-            document.documentElement.classList.add("dark");
-        }else{
-            setIsDarkMode(false);
-            document.documentElement.classList.remove("light");
-        }
-    },[])
-
-    const toggleTheme=() => {
-        if(isDarkMode){
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme","light");
-            setIsDarkMode(false);
-        }else{
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme","dark");
-            setIsDarkMode(true);
-        }
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("light");
     }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
+    }
+  };
 
   return (
-    <button onClick={toggleTheme} className="fixed max-sm:hidden top-4 right-4 z-50 p-2 rounded-full transition-colors duration-300" >
-        {isDarkMode ? <Sun className='h-6 w-6 text-amber-400' /> : <Moon className='h-6 w-6 text-cyan-700' />}
+    <button
+      onClick={toggleTheme}
+      className="fixed max-sm:hidden bottom-3 right-3 z-[1000] p-2 rounded-full transition-colors duration-300"
+    >
+      {isDarkMode ? (
+        <Sun className="h-6 w-6 text-amber-400" />
+      ) : (
+        <Moon className="h-6 w-6 text-cyan-700" />
+      )}
     </button>
-  )
-}
+  );
+};
 
-export default ThemeToggle
+export default ThemeToggle;
