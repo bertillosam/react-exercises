@@ -2,6 +2,7 @@ import { useState } from 'react'
 import MobileMenu from "./Components/MobileMenu";
 import Navbar from "./Components/Navbar"
 import ThemeToggle from "./Components/ThemeToggle"
+import Home from './Sections/Home';
 
 
 
@@ -15,7 +16,7 @@ function App() {
         <ThemeToggle />
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        
+        <Home />        
       </div>
     </>
   )

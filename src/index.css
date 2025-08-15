@@ -6,6 +6,7 @@
     --color-foreground : hsl(var(--foreground));    
     --color-primary : hsl(var(--color-primary));
     --color-secondary : hsl(var(--color-secondary));  
+
 }
 
 @layer base {
@@ -35,9 +36,20 @@
         font-feature-settings: "rlig" 1, "calt" 1;
     }
 }
+
+@layer components {
+    .box { 
+        @apply flex-1 border border-gray-500 bg-slate-600 flex items-center justify-center text-2xl active:bg-slate-700 hover:cursor-pointer m-0.5 hover:scale-105 transform transition-transform duration-150 rounded hover:animate-ping
+    }
+    .rowbox {
+        @apply flex flex-1
+    }
+}
+
 #root{
     max-width: 100%;
     margin: 0 auto;
     padding: 0;
     text-align: center;
 }
+

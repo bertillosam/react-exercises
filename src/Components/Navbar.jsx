@@ -26,19 +26,22 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
               href="#home"
               className="text-gray-500 hover:text-primary transform-colors"
             >
-              {" "}Home{" "}
+              {" "}
+              Home{" "}
             </a>
             <a
               href="#about"
               className="text-gray-500 hover:text-primary transform-colors"
             >
-              {" "}About{" "}
+              {" "}
+              About{" "}
             </a>
             <a
               href="#contact"
               className="text-gray-500 hover:text-primary transform-colors"
             >
-              {" "}Contact{" "}
+              {" "}
+              Contact{" "}
             </a>
           </div>
         </div>

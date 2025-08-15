@@ -3,7 +3,7 @@ import React from "react";
 const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-40 flex flex-col items-center justify-center transition-all duration-300 ease-in-out
+      className={`fixed top-0 left-0 w-full z-40 flex flex-col items-center justify-center transition-all duration-300 ease-in-out backdrop-blur-sm bg-background/1
                     ${
                       menuOpen
                         ? "h-screen opacity-100 pointer-events-auto"
@@ -12,7 +12,7 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     >
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute top-15 right-6 text-primary text-3xl focus:outline-none cursor-pointer"
+        className="absolute top-6 right-6 text-primary text-3xl focus:outline-none cursor-pointer"
         aria-label="Close Menu"
       >
         &times;
