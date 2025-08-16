@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import FirstExercises from "../Components/FirstExercises";
+import SecondExercises from "../Components/SecondExercises";
 
 const Home = () => {
   const [reactExercises, setReactExercises] = useState(false);
@@ -44,7 +45,12 @@ const Home = () => {
                 >
                   Game
                 </button>
-                {reactFirstExercises && <FirstExercises />}
+                {reactFirstExercises && 
+                  <div className="m-4 gap-4">
+                  <FirstExercises />
+                  <SecondExercises />
+                  </div>
+                }
               </div>
             </div>
           </div>

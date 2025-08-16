@@ -44,6 +44,9 @@
     .rowbox {
         @apply flex flex-1
     }
+    .gamebtn{
+        @apply px-6 py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-500 active:bg-indigo-400
+    }
 }
 
 #root{

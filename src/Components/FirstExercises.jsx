@@ -60,57 +60,59 @@ const FirstExercises = () => {
   };
 
   return (
-    <div className="h-[65vh] flex flex-col items-center gap-4 pt-10">
+    <div className="">
       {!tikTakTok && (
         <button
           onClick={() => setTikTakTok(true)}
-          className="px-6 py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-500 active:bg-indigo-400"
+          className="gamebtn"
         >
           TikTakTok
         </button>
       )}
       {tikTakTok && (
-        <>        
-          <div className="flex flex-col w-full max-w-sm aspect-square">
-            {[0, 1, 2].map((row) => (
-              <div key={row} className="flex flex-1">
-                {[0, 1, 2].map((col) => {
-                  const index = row * 3 + col;
-                  return (
-                    <div
-                      key={index}
-                      className={`box ${
-                        board[index] === ""
-                          ? "hover:scale-105"
-                          : "cursor-default hover:animate-none"
-                      }`}
-                      onClick={() => toggle(index)}
-                    >
-                      {board[index] === "x" && (
-                        <XIcon className="text-rose-500 w-25 h-25" />
-                      )}
-                      {board[index] === "o" && (
-                        <Circle className="text-amber-400 w-25 h-25" />
-                      )}
-                    </div>
-                  );
-                })}
+        <>
+          <div className="h-[65vh] flex flex-col items-center gap-4 pt-10">
+            {winner && (
+              <div className="text-lg font-semibold text-center">
+                {winner === "Draw" ? "Aynako draw!" : `${winner} panalo!`}
               </div>
-            ))}
-          </div>
+            )}
 
-          {winner && (
-            <div className="text-lg font-semibold text-center">
-              {winner === "Draw" ? "Aynako draw!" : `${winner} panalo!`}
+            <div className="flex flex-col w-full max-w-sm aspect-square">
+              {[0, 1, 2].map((row) => (
+                <div key={row} className="flex flex-1">
+                  {[0, 1, 2].map((col) => {
+                    const index = row * 3 + col;
+                    return (
+                      <div
+                        key={index}
+                        className={`box ${
+                          board[index] === "" && !lock
+                            ? "hover:scale-105"
+                            : "cursor-default hover:animate-none"
+                        }`}
+                        onClick={() => toggle(index)}
+                      >
+                        {board[index] === "x" && (
+                          <XIcon className="text-rose-500 w-25 h-25" />
+                        )}
+                        {board[index] === "o" && (
+                          <Circle className="text-amber-400 w-25 h-25" />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
             </div>
-          )}
 
-          <button
-            className="px-4 py-2 bg-violet-700 text-white rounded-lg hover:bg-violet-600 active:bg-violet-300"
-            onClick={resetGame}
-          >
-            Ulitin
-          </button>
+            <button
+              className="px-4 py-2 bg-violet-700 text-white rounded-lg hover:bg-violet-600 active:bg-violet-300"
+              onClick={resetGame}
+            >
+              Ulitin
+            </button>
+          </div>
         </>
       )}
     </div>
