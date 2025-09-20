@@ -11,7 +11,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
         <div className="flex justify-between items-center h-16 font-bold">
           <a>
             {" "}
-            Samo<span className="text-blue-500">.dev</span>{" "}
+            Sam<span className="text-blue-500">o</span>{" "}
           </a>
 
           <div

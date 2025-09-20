@@ -72,7 +72,7 @@ const SecondExercises = () => {
                 onClick={resetGame}
                 className="mt-6 px-4 py-2 bg-green-500 rounded-lg hover:bg-green-400 active:bg-green-300"
               >
-                Play Again
+                Ulitin
               </button>
             </div>
           )}

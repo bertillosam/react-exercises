@@ -6,9 +6,10 @@ import SecondExercises from "../Components/SecondExercises";
 const Home = () => {
   const [reactExercises, setReactExercises] = useState(false);
   const [reactFirstExercises, setFirstReactExercises] = useState(false);
+  const [activeExercises, setActiveExercises] = useState(null);
   const closeAll = () => {
     setReactExercises(false);
-    setFirstReactExercises(false);
+    setActiveExercises(null);
   };
 
   return (

@@ -62,22 +62,13 @@ const FirstExercises = () => {
   return (
     <div className="">
       {!tikTakTok && (
-        <button
-          onClick={() => setTikTakTok(true)}
-          className="gamebtn"
-        >
+        <button onClick={() => setTikTakTok(true)} className="gamebtn">
           TikTakTok
         </button>
       )}
       {tikTakTok && (
         <>
           <div className="h-[65vh] flex flex-col items-center gap-4 pt-10">
-            {winner && (
-              <div className="text-lg font-semibold text-center">
-                {winner === "Draw" ? "Aynako draw!" : `${winner} panalo!`}
-              </div>
-            )}
-
             <div className="flex flex-col w-full max-w-sm aspect-square">
               {[0, 1, 2].map((row) => (
                 <div key={row} className="flex flex-1">
@@ -105,6 +96,12 @@ const FirstExercises = () => {
                 </div>
               ))}
             </div>
+
+            {winner && (
+              <div className="text-lg font-semibold text-center">
+                {winner === "Draw" ? "Aynako draw!" : `${winner} panalo!`}
+              </div>
+            )}
 
             <button
               className="px-4 py-2 bg-violet-700 text-white rounded-lg hover:bg-violet-600 active:bg-violet-300"
